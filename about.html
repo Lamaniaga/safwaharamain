@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta -->
+    <title>Safwah Haramain Tour & Travel | Paket Umroh Resmi & Amanah</title>
+    <meta name="description"
+        content="Safwah Haramain Tour & Travel adalah penyelenggara resmi PPIU. Paket Umroh Reguler & VIP dengan fasilitas terbaik, hotel dekat Masjidil Haram, dan pembimbing berpengalaman." />
+    <meta name="keywords"
+        content="umroh resmi, paket umroh 2026, travel umroh terpercaya, umroh jakarta, safwah haramain, ppiu resmi, umroh vip, travel haji umroh" />
+    <meta name="author" content="Safwah Haramain Tour & Travel" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://safwaharamain.lamaniaga.web.id/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon.png" />
+
+    <!-- Open Graph (Facebook / WhatsApp Preview) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Safwah Haramain | Paket Umroh Resmi & Amanah" />
+    <meta property="og:description"
+        content="Ibadah lebih tenang bersama Safwah Haramain. Hotel dekat Masjidil Haram, jadwal pasti, dan pembimbing profesional." />
+    <meta property="og:image" content="https://safwaharamain.lamaniaga.web.id/images/og-cover.jpg" />
+    <meta property="og:url" content="https://safwaharamain.lamaniaga.web.id/" />
+    <meta property="og:site_name" content="Safwah Haramain Tour & Travel" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Safwah Haramain | Paket Umroh Resmi & Amanah" />
+    <meta name="twitter:description"
+        content="Travel umroh resmi PPIU dengan layanan profesional dan fasilitas terbaik." />
+    <meta name="twitter:image" content="https://safwaharamain.lamaniaga.web.id/images/og-cover.jpg" />
+
+    <!-- Geo Targeting (Optional tapi bagus untuk local SEO) -->
+    <meta name="geo.region" content="ID" />
+    <meta name="geo.placename" content="Jakarta" />
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- ================= NAVBAR ================= -->
+    <header x-data="{ scrolled: false, open: false }" @scroll.window="scrolled = window.scrollY > 50" :class="scrolled 
+        ? 'bg-white shadow-md border-b border-[#C6A75E]/30 py-4' 
+        : 'bg-transparent py-6'" class="fixed w-full top-0 z-50 transition-all duration-300">
+
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+
+            <!-- Logo -->
+            <div :class="scrolled ? 'text-[#0F3D2E]' : 'text-white'"
+                class="text-lg md:text-xl font-semibold transition-colors duration-300">
+                Safwah Haramain
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav :class="scrolled ? 'text-[#0F3D2E]' : 'text-white'"
+                class="hidden md:flex gap-8 font-medium transition-colors duration-300">
+                <a href="/" class="hover:text-[#C6A75E] transition">Beranda</a>
+                <a href="/services" class="hover:text-[#C6A75E] transition">Paket Perjalanan</a>
+                <a href="/about" class="hover:text-[#C6A75E] transition">Tentang Kami</a>
+            </nav>
+
+            <!-- Mobile Hamburger -->
+            <button @click="open = !open" :class="scrolled ? 'text-[#0F3D2E]' : 'text-white'"
+                class="md:hidden focus:outline-none transition-colors duration-300">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- ================= MOBILE MENU ================= -->
+        <div x-show="open" x-transition @click.away="open = false"
+            class="md:hidden bg-white shadow-lg border-t border-[#C6A75E]/20">
+
+            <div class="px-6 py-6 space-y-6 text-[#0F3D2E] font-medium">
+
+                <a href="/" class="block hover:text-[#C6A75E] transition">
+                    Beranda
+                </a>
+
+                <a href="/services" class="block hover:text-[#C6A75E] transition">
+                    Paket Perjalanan
+                </a>
+
+                <a href="/about" class="block hover:text-[#C6A75E] transition">
+                    Tentang Kami
+                </a>
+
+            </div>
+        </div>
+
+    </header>
+
+    <main x-data="reservationModal()">
+        <!-- ================= HERO ABOUT ================= -->
+        <section id="about-hero" class="relative min-h-screen flex items-center bg-primary text-white overflow-hidden">
+
+            <!-- Subtle Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/40"></div>
+
+            <div class="relative w-full max-w-4xl mx-auto px-6 py-4 text-center">
+                <!-- Brand -->
+                <p class="text-xs sm:text-sm tracking-[0.35em] uppercase text-gold/80">
+                    Safwah Haramain Tour & Travel
+                </p>
+
+                <!-- Headline -->
+                <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tigh">
+                    Teruji Selama Lebih Dari
+                    <span class="block text-gold mt-3">
+                        Satu Dekade
+                    </span>
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="mt-8 text-base sm:text-lg lg:text-xl text-gray-200 
+                     max-w-2xl mx-auto leading-relaxed">
+                    Penyelenggara Perjalanan Ibadah Umrah (PPIU) resmi
+                    yang telah memberangkatkan ribuan jamaah dengan pelayanan terbaik.
+                </p>
+
+                <!-- Highlight Stats -->
+                <div class="mt-14 grid grid-cols-3 gap-4 md:gap-8">
+
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-semibold text-gold">10+ Tahun</h3>
+                        <p class="text-xs md:text-sm text-neutral-200 mt-2">
+                            Pengalaman Melayani Jamaah
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-semibold text-gold">1000+ Jamaah</h3>
+                        <p class="text-xs md:text-sm text-neutral-200 mt-2">
+                            Telah Diberangkatkan
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-semibold text-gold">PPIU Resmi</h3>
+                        <p class="text-xs md:text-sm text-neutral-200 mt-2">
+                            Legalitas Terverifikasi
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GALLERY DOKUMENTASI ================= -->
+        <section class="py-24 bg-white">
+
+            <div x-data="{
+                        galleries: [
+                            {
+                                image: '/images/img-doc1.webp',
+                                alt: 'Jamaah di Masjidil Haram',
+                                title: 'Masjidil Haram – Makkah',
+                                desc: 'Jamaah melaksanakan tawaf dengan pendampingan pembimbing ibadah.'
+                            },
+                            {
+                                image: '/images/img-doc2.webp',
+                                alt: 'Masjid Nabawi',
+                                title: 'Masjid Nabawi – Madinah',
+                                desc: 'Ziarah Raudhah dan shalat berjamaah bersama rombongan.'
+                            },
+                            {
+                                image: '/images/img-doc3.webp',
+                                alt: 'Manasik Umroh',
+                                title: 'Manasik Sebelum Keberangkatan',
+                                desc: 'Pembekalan materi ibadah agar jamaah lebih siap dan tenang.'
+                            },
+                            {
+                                image: '/images/img-doc4.webp',
+                                alt: 'Hotel Jamaah',
+                                title: 'Hotel 4–5★ Dekat Masjid',
+                                desc: 'Akses mudah ke Masjidil Haram & Masjid Nabawi.'
+                            },
+                            {
+                                image: '/images/img-doc5.webp',
+                                alt: 'City Tour Religi',
+                                title: 'City Tour Religi',
+                                desc: 'Mengunjungi Jabal Uhud, Quba, dan lokasi bersejarah lainnya.'
+                            },
+                            {
+                                image: '/images/img-doc6.webp',
+                                alt: 'Kebersamaan Jamaah',
+                                title: 'Kebersamaan Jamaah',
+                                desc: 'Momen kebersamaan yang mempererat ukhuwah selama perjalanan.'
+                            }
+                        ]
+                    }">
+
+                <div class="max-w-6xl mx-auto px-6">
+
+                    <!-- Heading -->
+                    <div class="text-center max-w-2xl mx-auto">
+                        <h2 class="text-3xl md:text-4xl font-semibold text-neutral-900">
+                            Dokumentasi Perjalanan Jamaah
+                        </h2>
+                        <p class="mt-4 text-neutral-600">
+                            Momen ibadah dan kebersamaan jamaah Safwah Haramain di Tanah Suci.
+                        </p>
+                    </div>
+
+                    <!-- Grid -->
+                    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <template x-for="(item, index) in galleries" :key="index">
+                            <div class="group relative overflow-hidden rounded-2xl">
+
+                                <img :src="item.image" :alt="item.alt"
+                                    class="w-full h-72 object-cover transition duration-700 group-hover:scale-110">
+
+                                <div class="absolute inset-0 bg-gradient-to-t 
+                                from-black/70 via-black/30 to-transparent 
+                                opacity-0 group-hover:opacity-100 
+                                transition duration-500"></div>
+
+                                <div class="absolute bottom-0 p-6 text-white
+                                translate-y-6 group-hover:translate-y-0
+                                opacity-0 group-hover:opacity-100
+                                transition duration-500">
+
+                                    <h3 class="font-semibold text-lg" x-text="item.title"></h3>
+
+                                    <p class="text-sm text-gray-200 mt-2" x-text="item.desc"></p>
+                                </div>
+
+                            </div>
+                        </template>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- ================= VIDEO DOKUMENTASI ================= -->
+        <section class="py-24 bg-white" x-data="{
+                open: false,
+                videoUrl: '',
+                videos: [
+                    {
+                        title: 'Umroh Reguler 9 Hari',
+                        desc: 'Keberangkatan Januari 2025',
+                        thumb: '/images/img-doc7.webp',
+                        alt: 'Highlight Umroh Reguler',
+                        url: 'https://www.youtube-nocookie.com/embed/YbIxOgibJhI'
+                    },
+                    {
+                        title: 'Umroh Plus Turki',
+                        desc: 'City Tour Istanbul & Cappadocia',
+                        thumb: '/images/img-doc8.webp',
+                        alt: 'Umroh Plus Turki',
+                        url: 'https://www.youtube-nocookie.com/embed/jM81wroj_MQ'
+                    },
+                    {
+                        title: 'Testimoni Jamaah',
+                        desc: 'Pengalaman ibadah lebih tenang',
+                        thumb: '/images/img-doc2.webp',
+                        alt: 'Testimoni Jamaah',
+                        url: 'https://www.youtube-nocookie.com/embed/Cfdr_BV85F0'
+                    }
+                ]
+            }">
+
+            <div class="max-w-6xl mx-auto px-6">
+
+                <!-- Heading -->
+                <!-- <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-neutral-900">
+                        Dokumentasi Video Perjalanan
+                    </h2>
+                    <p class="mt-4 text-neutral-600">
+                        Saksikan pengalaman ibadah jamaah bersama Safwah Haramain.
+                    </p>
+                </div> -->
+
+                <!-- Video Grid -->
+                <div class="mt-16 grid md:grid-cols-3 gap-8">
+
+                    <template x-for="video in videos" :key="video.title">
+                        <div class="group relative overflow-hidden rounded-2xl cursor-pointer"
+                            @click="open = true; videoUrl = video.url">
+
+                            <img :src="video.thumb" :alt="video.alt"
+                                class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition"></div>
+
+                            <!-- Play Icon -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center 
+                                    group-hover:scale-110 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Title -->
+                            <div class="absolute bottom-0 p-6 text-white">
+                                <h3 class="font-semibold text-lg" x-text="video.title"></h3>
+                                <p class="text-sm text-gray-200 mt-1" x-text="video.desc"></p>
+                            </div>
+
+                        </div>
+                    </template>
+
+                </div>
+
+
+            </div>
+
+            <!-- ================= MODAL ================= -->
+            <div x-show="open" x-transition class="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+                @click.self="open = false; videoUrl = ''">
+
+                <div class="bg-white rounded-2xl overflow-hidden w-full max-w-4xl">
+
+                    <div class="relative pb-[56.25%]">
+                        <iframe :src="videoUrl" class="absolute top-0 left-0 w-full h-full" frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="p-4 text-right">
+                        <button @click="open = false; videoUrl = ''"
+                            class="text-sm text-neutral-500 hover:text-neutral-900">
+                            Tutup
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Pembimbing ================= -->
+        <section class="py-28 bg-neutral-900 text-white">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+
+                <!-- Heading -->
+                <div class="max-w-2xl mx-auto mb-20">
+                    <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+                        Pembimbing Profesional & Berpengalaman
+                    </h2>
+                    <p class="text-neutral-400">
+                        Didampingi ustadz dan pembimbing tersertifikasi.
+                    </p>
+                </div>
+
+                <!-- Team Grid -->
+                <div class="grid md:grid-cols-3 gap-12">
+
+                    <!-- Card -->
+                    <article class="bg-white/5 backdrop-blur-sm border border-white/10 
+                            rounded-3xl p-8 transition hover:border-white/30">
+
+                        <div class="overflow-hidden rounded-2xl mb-6">
+                            <img src="/images/pembimbing-1.webp"
+                                alt="Ustadz Ahmad Fauzi pembimbing umroh Safwah Haramain"
+                                class="w-full h-72 object-cover">
+                        </div>
+
+                        <h3 class="text-lg font-semibold">
+                            Ust. Ahmad Fauzi, Lc.
+                        </h3>
+
+                        <p class="text-sm text-primary mt-2">
+                            Pembimbing Ibadah Senior
+                        </p>
+
+                        <p class="text-sm text-neutral-400 mt-3">
+                            12+ tahun pengalaman • 50+ kloter
+                        </p>
+                    </article>
+
+                    <!-- Card -->
+                    <article class="bg-white/5 backdrop-blur-sm border border-white/10 
+                            rounded-3xl p-8 transition hover:border-white/30">
+
+                        <div class="overflow-hidden rounded-2xl mb-6">
+                            <img src="/images/pembimbing-2.webp" alt="Ustadzah Siti Rahmah pembimbing wanita umroh"
+                                class="w-full h-72 object-cover">
+                        </div>
+
+                        <h3 class="text-lg font-semibold">
+                            Ustadzah Siti Rahmah, M.Ag.
+                        </h3>
+
+                        <p class="text-sm text-primary mt-2">
+                            Pembimbing Jamaah Wanita
+                        </p>
+
+                        <p class="text-sm text-neutral-400 mt-3">
+                            10+ tahun pengalaman • 800+ jamaah
+                        </p>
+                    </article>
+
+                    <!-- Card -->
+                    <article class="bg-white/5 backdrop-blur-sm border border-white/10 
+                            rounded-3xl p-8 transition hover:border-white/30">
+
+                        <div class="overflow-hidden rounded-2xl mb-6">
+                            <img src="/images/pembimbing-3.webp" alt="Ustadz Muhammad Arif pembimbing haji dan umroh"
+                                class="w-full h-72 object-cover">
+                        </div>
+
+                        <h3 class="text-lg font-semibold">
+                            Ust. Muhammad Arif, Lc.
+                        </h3>
+
+                        <p class="text-sm text-primary mt-2">
+                            Koordinator & Pembimbing
+                        </p>
+
+                        <p class="text-sm text-neutral-400 mt-3">
+                            9+ tahun pengalaman • Ahli manasik
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= Info Perusahaan ================= -->
+        <section class="py-28 bg-neutral-50">
+            <div class="max-w-6xl mx-auto px-6">
+
+                <!-- Heading -->
+                <div class="max-w-2xl mb-16">
+                    <h2 class="text-3xl font-semibold text-neutral-900 mb-4">
+                        Informasi Perusahaan
+                    </h2>
+                    <p class="text-neutral-600">
+                        Mengenal lebih dekat perjalanan dan lokasi Safwah Haramain.
+                    </p>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="grid lg:grid-cols-3 gap-12 items-start">
+
+                    <!-- FOTO / SEJARAH VISUAL -->
+                    <div class="space-y-6">
+                        <div class="aspect-[4/3] rounded-3xl overflow-hidden">
+                            <img src="/images/kantor-lama.webp"
+                                alt="Kantor Lama Safwah Haramain Tour & Travel di Jakarta"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                        <div class="aspect-[4/3] rounded-3xl overflow-hidden">
+                            <img src="/images/kantor-baru.webp"
+                                alt="Kantor Baru Safwah Haramain Tour & Travel di Jakarta"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+
+                    <!-- SEJARAH SINGKAT -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-neutral-900 mb-6">
+                            Sejarah Singkat
+                        </h3>
+
+                        <p class="text-neutral-600 leading-relaxed mb-6">
+                            Safwah Haramain Tour & Travel didirikan dengan komitmen
+                            menghadirkan perjalanan ibadah yang amanah dan profesional.
+                            Berawal dari pelayanan jamaah skala kecil, kini telah
+                            memberangkatkan ribuan jamaah ke Tanah Suci.
+                        </p>
+
+                        <p class="text-neutral-600 leading-relaxed mb-6">
+                            Dengan legalitas resmi sebagai Penyelenggara Perjalanan
+                            Ibadah Umroh (PPIU), kami terus menjaga kualitas layanan,
+                            transparansi biaya, dan pendampingan penuh selama ibadah.
+                        </p>
+
+                        <div class="pt-4 border-t border-neutral-200">
+                            <p class="text-sm text-neutral-500">
+                                Berdiri sejak 2014 • Terdaftar Resmi PPIU
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- MAP -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-neutral-900 mb-6">
+                            Lokasi Kantor
+                        </h3>
+
+                        <div class="rounded-3xl overflow-hidden shadow-sm aspect-[4/3]">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30521.832879224978!2d7.994055747985842!3d17.012428411935474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x119831fc947f59a7%3A0x266506a893558d94!2sMosqu%C3%A9e%20Eladab!5e0!3m2!1sid!2sus!4v1771331648724!5m2!1sid!2sus"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" class="w-full h-full border-0">
+                            </iframe>
+                        </div>
+
+                        <p class="text-sm text-neutral-500 mt-4">
+                            Jakarta, Indonesia
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CTA ================= -->
+        <section class="py-28 bg-primary text-white text-center">
+            <div class="max-w-3xl mx-auto px-6">
+                <h2 class="text-3xl font-semibold mb-6">
+                    Siap Menjalankan Perjalanan Ibadah Anda?
+                </h2>
+                <a href="https://wa.me/089502440777?text=Assalamu%27alaikum%20saya%20ingin%20informasi%20paket%20Umroh"
+                    target="_blank" class="inline-block px-8 py-4 bg-gold text-neutral-900 rounded-full font-medium 
+                    transition hover:bg-neutral-200 hover:shadow-lg hover:scale-105 hover:bg-white">
+                    Konsultasi via WhatsApp
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-[#0c0f13] text-gray-400 pt-20 pb-10">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-4 gap-12">
+
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold">
+                        Safwah Haramain Tour & Travel
+                    </h3>
+                    <p class="mt-4 text-sm leading-relaxed">
+                        Ibadah lebih tenang dengan fasilitas terbaik.
+                        Terdaftar resmi sebagai Penyelenggara Perjalanan Ibadah Umrah (PPIU).
+                    </p>
+                </div>
+
+                <!-- Navigasi -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">
+                        Navigasi
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/" class="hover:text-gold transition">Beranda</a></li>
+                        <li><a href="/services" class="hover:text-gold transition">Paket Perjalanan</a></li>
+                        <li><a href="/about" class="hover:text-gold transition">Tentang Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontak -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">
+                        Kontak
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li>+62 812 3456 7890</li>
+                        <li>info@safwahharamain.com</li>
+                        <li>Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+
+                <!-- Legalitas -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">
+                        Legalitas
+                    </h4>
+                    <p class="text-sm leading-relaxed">
+                        Nomor PPIU:
+                    </p>
+                    <p class="mt-2 text-gold font-semibold">
+                        2490023032001
+                    </p>
+                    <p class="mt-4 text-xs">
+                        © 2025 PT Safwah Haramain. All rights reserved.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Divider -->
+            <div class="mt-16 border-t border-gold/20 pt-6 text-center text-xs text-gray-500">
+                Dibuat dengan komitmen pelayanan dan amanah untuk jamaah.
+            </div>
+
+        </div>
+
+    </footer>
+    <script type="module" src="/src/js/main.ts"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.shield {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    145deg,
+    #c6a75e,
+    #f5e2a0,
+    #b48a2c
+  );
+
+  border-radius: 40% 40% 50% 50% / 20% 20% 80% 80%;
+
+  box-shadow:
+    0 25px 50px rgba(198, 167, 94, 0.25),
+    inset 0 2px 6px rgba(255, 255, 255, 0.4);
+
+  overflow: hidden;
+}
+
+/* Subtle shine */
+.shield::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255,255,255,0.35) 50%,
+    transparent 60%
+  );
+  transform: rotate(25deg);
+  animation: shine 6s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
