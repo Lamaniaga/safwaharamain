@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Primary Meta -->
     <title>Safwah Haramain Tour & Travel | Paket Umroh Resmi & Amanah</title>
     <meta name="description"
@@ -44,9 +44,13 @@
 <body class="bg-white text-gray-800">
 
     <!-- ================= NAVBAR ================= -->
-    <header x-data="{ scrolled: false, open: false }" @scroll.window="scrolled = window.scrollY > 50" :class="scrolled 
-        ? 'bg-white shadow-md border-b border-[#C6A75E]/30 py-4' 
-        : 'bg-transparent py-6'" class="fixed w-full top-0 z-50 transition-all duration-300">
+    <header x-data="{ 
+            scrolled: false, 
+            open: false,
+            current: window.location.pathname
+    }" @scroll.window="scrolled = window.scrollY > 50"
+        :class="scrolled ? 'bg-white shadow-md border-b border-[#C6A75E]/30 py-4' : 'bg-transparent py-6'"
+        class="fixed w-full top-0 z-50 transition-all duration-300">
 
         <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
 
@@ -59,9 +63,25 @@
             <!-- Desktop Menu -->
             <nav :class="scrolled ? 'text-[#0F3D2E]' : 'text-white'"
                 class="hidden md:flex gap-8 font-medium transition-colors duration-300">
-                <a href="/" class="hover:text-[#C6A75E] transition">Beranda</a>
-                <a href="/services" class="hover:text-[#C6A75E] transition">Paket Perjalanan</a>
-                <a href="/about" class="hover:text-[#C6A75E] transition">Tentang Kami</a>
+
+                <a href="/" :class="current === '/' 
+                    ? 'text-[#C6A75E] font-semibold border-b-2 border-[#C6A75E] pb-1' 
+                    : 'hover:text-[#C6A75E]'" class="transition">
+                    Beranda
+                </a>
+
+                <a href="/services" :class="current.includes('/services') 
+                    ? 'text-[#C6A75E] font-semibold border-b-2 border-[#C6A75E] pb-1' 
+                    : 'hover:text-[#C6A75E]'" class="transition">
+                    Paket Perjalanan
+                </a>
+
+                <a href="/about" :class="current.includes('/about') 
+                    ? 'text-[#C6A75E] font-semibold border-b-2 border-[#C6A75E] pb-1' 
+                    : 'hover:text-[#C6A75E]'" class="transition">
+                    Tentang Kami
+                </a>
+
             </nav>
 
             <!-- Mobile Hamburger -->
@@ -82,15 +102,21 @@
 
             <div class="px-6 py-6 space-y-6 text-[#0F3D2E] font-medium">
 
-                <a href="/" class="block hover:text-[#C6A75E] transition">
+                <a href="/" :class="current === '/' 
+                    ? 'text-[#C6A75E] font-semibold' 
+                    : 'hover:text-[#C6A75E]'" class="block transition">
                     Beranda
                 </a>
 
-                <a href="/services" class="block hover:text-[#C6A75E] transition">
+                <a href="/services" :class="current.includes('/services') 
+                    ? 'text-[#C6A75E] font-semibold' 
+                    : 'hover:text-[#C6A75E]'" class="block transition">
                     Paket Perjalanan
                 </a>
 
-                <a href="/about" class="block hover:text-[#C6A75E] transition">
+                <a href="/about" :class="current.includes('/about') 
+                    ? 'text-[#C6A75E] font-semibold' 
+                    : 'hover:text-[#C6A75E]'" class="block transition">
                     Tentang Kami
                 </a>
 
@@ -98,6 +124,7 @@
         </div>
 
     </header>
+
 
     <main>
         <!-- Paket Hero -->
@@ -142,12 +169,13 @@
                     </a>
 
                     <!-- Secondary Button -->
-                    <a href="/contacts.html" class="inline-flex items-center justify-center
-                    px-8 py-3 rounded-full
-                    border border-white/40 text-white font-medium
-                    transition duration-300
-                    hover:text-gold hover:border-transparent hover:bg-white hover:scale-105
-                    focus:outline-none focus:ring-2 focus:ring-white/40">
+                    <a href="https://wa.me/089502440777?text=Assalamu%27alaikum%20saya%20ingin%20informasi%20paket%20Umroh"
+                        target="_blank" class="inline-flex items-center justify-center
+                        px-8 py-3 rounded-full
+                        border border-white/40 text-white font-medium
+                        transition duration-300
+                        hover:text-gold hover:border-transparent hover:bg-white hover:scale-105
+                        focus:outline-none focus:ring-2 focus:ring-white/40">
                         Konsultasi
                     </a>
 
@@ -240,74 +268,82 @@
         </section>
 
         <!-- ================= PAKET UNGGULAN ================= -->
-        <section class="bg-[#0f0f0f] text-white py-32">
+        <section class="bg-[#0f0f0f] text-white py-24">
 
             <div class="max-w-6xl mx-auto px-6">
 
                 <!-- Heading -->
                 <div class="text-center max-w-2xl mx-auto">
                     <p class="text-xs tracking-[0.3em] text-neutral-500 uppercase">
-                        Perjalanan Spiritual Terpilih
+                        Paket Unggulan
                     </p>
 
                     <h2 class="mt-6 text-4xl md:text-5xl font-light leading-tight">
-                        Pengalaman Ibadah yang Dirancang
-                        dengan Ketelitian dan Kehormatan
+                        Umroh VIP 9 Hari
                     </h2>
 
                     <div class="w-16 h-[1px] bg-[#c6a84f] mx-auto my-10"></div>
 
                     <p class="text-neutral-400 leading-relaxed">
-                        Setiap detail dipersiapkan dengan standar tinggi,
-                        menghadirkan perjalanan yang tenang, tertata, dan bermakna.
+                        Dirancang untuk kenyamanan maksimal dan pengalaman ibadah yang lebih khusyuk.
                     </p>
                 </div>
 
 
                 <!-- Content -->
-                <div class="mt-24 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="mt-20 grid lg:grid-cols-2 gap-16 items-center">
 
                     <!-- Image -->
                     <div class="rounded-3xl overflow-hidden">
-                        <img src="/images/vip.webp" class="w-full h-full object-cover" alt="Perjalanan Umroh Premium">
+                        <img src="/images/vip.webp" class="w-full h-[400px] object-cover"
+                            alt="Umroh VIP Safwah Haramain">
                     </div>
 
                     <!-- Text -->
                     <div>
-                        <h3 class="text-3xl font-light leading-snug">
-                            Standar Pelayanan yang Tidak Dikompromikan
-                        </h3>
 
-                        <p class="mt-8 text-neutral-400 leading-relaxed">
-                            Akomodasi pilihan, pendamping berpengalaman,
-                            serta pengelolaan perjalanan yang profesional
-                            untuk memastikan setiap jamaah dapat fokus
-                            sepenuhnya pada ibadah.
-                        </p>
+                        <div class="space-y-4 text-neutral-400 text-sm tracking-wide">
+                            <p>✓ Hotel bintang 5 dekat Masjidil Haram</p>
+                            <p>✓ Muthawwif berpengalaman</p>
+                            <p>✓ Penerbangan direct & nyaman</p>
+                            <p>✓ Handling profesional sejak keberangkatan</p>
+                        </div>
 
-                        <p class="mt-6 text-neutral-500">
-                            Kami percaya kualitas tidak perlu dijelaskan berlebihan —
-                            ia akan terasa dengan sendirinya.
-                        </p>
+                        <div class="mt-10">
+                            <p class="text-neutral-500 text-sm uppercase tracking-wider">
+                                Mulai dari
+                            </p>
+                            <p class="text-3xl text-[#c6a84f] font-light">
+                                Rp 49.000.000
+                            </p>
+                        </div>
 
-                        <!-- Single CTA -->
-                        <div class="mt-12">
-                            <a href="/services#pilihan-paket" class="inline-block px-10 py-3 
-                       border border-[#c6a84f] 
-                       text-[#c6a84f] 
-                       text-sm tracking-wide
-                       hover:bg-[#c6a84f] hover:text-black
-                       transition duration-300">
+                        <!-- CTA Lebih Tegas -->
+                        <div class="mt-12 flex gap-6">
+                            <a href="/services#pilihan-paket" class="px-10 py-3 
+                        bg-[#c6a84f] text-black
+                        text-sm tracking-wide
+                        hover:opacity-90
+                        transition duration-300">
                                 Lihat Detail
                             </a>
+
+                            <a href="https://wa.me/089502440777?text=Assalamu%27alaikum%20saya%20ingin%20informasi%20paket%20Umroh%20VIP%209%20Hari"
+                                target="_blank" class="px-10 py-3 
+                        border border-white/30
+                        text-sm tracking-wide
+                        hover:border-[#c6a84f] hover:text-[#c6a84f]
+                        transition duration-300">
+                                Konsultasi
+                            </a>
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
         </section>
-
 
         <!-- ================= TESTIMONI ================= -->
         <section class="bg-primary py-24 md:py-32 text-white">

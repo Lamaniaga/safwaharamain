@@ -43,9 +43,13 @@
 <body class="bg-white text-gray-800">
 
     <!-- ================= NAVBAR ================= -->
-    <header x-data="{ scrolled: false, open: false }" @scroll.window="scrolled = window.scrollY > 50" :class="scrolled 
-        ? 'bg-white shadow-md border-b border-[#C6A75E]/30 py-4' 
-        : 'bg-transparent py-6'" class="fixed w-full top-0 z-50 transition-all duration-300">
+    <header x-data="{ 
+            scrolled: false, 
+            open: false,
+            current: window.location.pathname
+    }" @scroll.window="scrolled = window.scrollY > 50"
+        :class="scrolled ? 'bg-white shadow-md border-b border-[#C6A75E]/30 py-4' : 'bg-transparent py-6'"
+        class="fixed w-full top-0 z-50 transition-all duration-300">
 
         <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
 
@@ -58,9 +62,25 @@
             <!-- Desktop Menu -->
             <nav :class="scrolled ? 'text-[#0F3D2E]' : 'text-white'"
                 class="hidden md:flex gap-8 font-medium transition-colors duration-300">
-                <a href="/" class="hover:text-[#C6A75E] transition">Beranda</a>
-                <a href="/services" class="hover:text-[#C6A75E] transition">Paket Perjalanan</a>
-                <a href="/about" class="hover:text-[#C6A75E] transition">Tentang Kami</a>
+
+                <a href="/" :class="current === '/' 
+                    ? 'text-[#C6A75E] font-semibold border-b-2 border-[#C6A75E] pb-1' 
+                    : 'hover:text-[#C6A75E]'" class="transition">
+                    Beranda
+                </a>
+
+                <a href="/services" :class="current.includes('/services') 
+                    ? 'text-[#C6A75E] font-semibold border-b-2 border-[#C6A75E] pb-1' 
+                    : 'hover:text-[#C6A75E]'" class="transition">
+                    Paket Perjalanan
+                </a>
+
+                <a href="/about" :class="current.includes('/about') 
+                    ? 'text-[#C6A75E] font-semibold border-b-2 border-[#C6A75E] pb-1' 
+                    : 'hover:text-[#C6A75E]'" class="transition">
+                    Tentang Kami
+                </a>
+
             </nav>
 
             <!-- Mobile Hamburger -->
@@ -81,15 +101,21 @@
 
             <div class="px-6 py-6 space-y-6 text-[#0F3D2E] font-medium">
 
-                <a href="/" class="block hover:text-[#C6A75E] transition">
+                <a href="/" :class="current === '/' 
+                    ? 'text-[#C6A75E] font-semibold' 
+                    : 'hover:text-[#C6A75E]'" class="block transition">
                     Beranda
                 </a>
 
-                <a href="/services" class="block hover:text-[#C6A75E] transition">
+                <a href="/services" :class="current.includes('/services') 
+                    ? 'text-[#C6A75E] font-semibold' 
+                    : 'hover:text-[#C6A75E]'" class="block transition">
                     Paket Perjalanan
                 </a>
 
-                <a href="/about" class="block hover:text-[#C6A75E] transition">
+                <a href="/about" :class="current.includes('/about') 
+                    ? 'text-[#C6A75E] font-semibold' 
+                    : 'hover:text-[#C6A75E]'" class="block transition">
                     Tentang Kami
                 </a>
 
